@@ -1,6 +1,6 @@
 #!/usr/bin/env python3.6
 from user  import User
-from credentials import Credentials
+from credential import Credentials
 
 def create_user(name,password):
     '''
@@ -18,7 +18,7 @@ def save_user(user):
 
 def create_credentials(name,site,password):
     '''
-    function to create new credentials
+    function to create new credential
     '''
     new_credentials = Credentials(name,site,password)
     return new_credentials
@@ -26,23 +26,23 @@ def create_credentials(name,site,password):
 
 def save_credentials(self):
     '''
-    Function to save credentials object into credentials_list
+    Function to save credential object into credentials_list
     '''
     Credentials.credentials_list.append(self)
 
 
-def del_credentials(credentials):
+def del_credentials(credential):
     '''
-    Function to delete credentials
+    Function to delete credential
     '''
-    credentials.delete_credentials()
+    credential.delete_credentials()
 
 def display_credentials(name):
     '''
     function that returns a list of credentials_list
     '''
-    for credentials in cls.credentials_list:
-        if credentials.site_username == name :
+    for credential in cls.credentials_list:
+        if credential.site_username == name :
             return cls.credentials_list
 
 
@@ -52,7 +52,7 @@ def main():
     user_name = input()
     print('\n')
     while True:
-       print(f"Please {user_name}! .Use these short codes: cu-create new user, cc-create new credentials,dc-display credentials")
+       print(f"Please {user_name}! .Use these short codes: cu-create new user, cc-create new credential,dc-display credential")
 
        short_code = input().lower()
        if short_code == 'cu':
@@ -83,10 +83,10 @@ def main():
 
        elif short-code == 'dc':
            if display_credentials():
-               print("Here is a list of your all your credentials")
+               print("Here is a list of your all your credential")
                print('\n')
-               for credentials in display_credentials():
-                   print(f"{credentials.site_name},{credentials.site_username}")
+               for credential in display_credentials():
+                   print(f"{credential.site_name},{credential.site_username}")
                print('\n')
            else:
                 print('\n')
