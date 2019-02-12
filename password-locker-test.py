@@ -84,7 +84,7 @@ class TestCredentials(unittest.TestCase):
 
         self.assertEqual(self.new_credential.site_name,"Github")
         self.assertEqual(self.new_credential.site_user_name,"UMULISA12")
-        self.assertEqual(self.new_user.site_password,"abana")
+        self.assertEqual(self.new_credential.site_password,"abana")
 
 
     def test_save_credential(self):
@@ -127,7 +127,7 @@ class TestCredentials(unittest.TestCase):
             test_credential = Credentials("Github","UMULISA12","abana") # new credential
             test_credential.save_credential()
 
-            self.new_contact.delete_contact()# Deleting a contact object
+            self.new_credential.delete_credential()# Deleting a contact object
             self.assertEqual(len(Credentials.credentials_list),1)
 
 
@@ -158,9 +158,9 @@ class TestCredentials(unittest.TestCase):
             Contact of person that matches the number.
         '''
 
-        for contact in cls.contact_list:
-            if contact.phone_number == number:
-                return contact
+        for credential in cls.credentials_list:
+            if credential.site_name == site_name:
+                return credential
 
 
 
