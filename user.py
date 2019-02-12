@@ -14,6 +14,14 @@ class Users:
         self.user_name = user_name
         self.password = password
 
+    def save_user(self):
+
+        '''
+        save_contact method saves contact objects into contact_list
+        '''
+
+        Users.username_and_password_list.append(self)   
+
 
 
        
