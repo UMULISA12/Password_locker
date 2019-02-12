@@ -129,8 +129,8 @@ def main():
           if display_credentials():
 
             for credential in display_credentials():
-            print(f"site name:{credential.site_name}")
-            print(f"site password:{credential.password}")
+             print(f"site name:{credential.site_name}")
+             print(f"site password:{credential.password}")
 
     else:
          print('\n')
@@ -139,18 +139,18 @@ def main():
 
          print("Enter the number you want to search for")
 
-            search_credential = input()
-            if check_existing_credentials(search_number):
+         search_credential = input()
+         if check_existing_credentials(search_number):
                 search_credential = find_credential(search_credential)
                 print(f"{search_credential.site_name {search_contact.site_username}")
                 print('-' * 20)
 
                 print(f"site user password.......{search_credential.site_userpassword}")
                 # print(f"Email address.......{search_contact.email}")
-            else:
+         else:
                 print("That credential does not exist")
 
-         elif short_code == "ex":
+         elif short-code == "ex":
                 print("Bye .......")
                 break
          else:
