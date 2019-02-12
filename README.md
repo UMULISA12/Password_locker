@@ -1,1 +1,3 @@
-# Password_locker
+# Project name
+Password locker
+
