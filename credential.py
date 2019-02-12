@@ -16,7 +16,7 @@ class Credentials:
     def save_credential(self):
 
         '''
-        save_contact method saves credential objects into credentials_list
+        save_credentials method saves credential objects into credentials_list
         '''
 
         Credentials.credentials_list.append(self)  
@@ -30,6 +30,22 @@ class Credentials:
         '''
 
         Credentials.credentials_list.remove(self)
+
+
+
+    @classmethod
+    def find_by_site_name(cls,site_name):
+        '''
+        Method that takes in a site and returns a username that matches that site_name.
+
+        Args:
+            site: Phone number to search for
+        Returns :
+            Contact of person that matches the number.
+        '''
+        for credential in cls.credentials_list:
+            if credential.site_name == site_name:
+                return credential
 
 
     @classmethod

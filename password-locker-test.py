@@ -83,7 +83,7 @@ class TestCredentials(unittest.TestCase):
         '''
 
         self.assertEqual(self.new_credential.site_name,"Github")
-        self.assertEqual(self.new_credential.site_user_name,"UMULISA12")
+        self.assertEqual(self.new_credential.site_username,"UMULISA12")
         self.assertEqual(self.new_credential.site_password,"abana")
 
 
@@ -143,24 +143,10 @@ class TestCredentials(unittest.TestCase):
 
             found_credential = Credentials.find_by_site_name("Github")
 
-            self.assertEqual(found_credential.site_user_name,test_credential.site_user_name)
+            self.assertEqual(found_credential.site_username,test_credential.site_username)
 
 
 
-    @classmethod
-    def find_by_site_name(cls,site_name):
-        '''
-        Method that takes in a site and returns a username that matches that site_namr.
-
-        Args:
-            number: Phone number to search for
-        Returns :
-            Contact of person that matches the number.
-        '''
-
-        for credential in cls.credentials_list:
-            if credential.site_name == site_name:
-                return credential
 
 
 
