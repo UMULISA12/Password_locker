@@ -1,27 +1,19 @@
-class Users:
+class User:
     """
-    Class that generates new instances of contacts
+    Class that generates new instances of user.
+    """
 
-    """
-    username_and_password_list = [] # Empty credential list
-  
-    def __init__(self,userName,password):
+    user_list = [] # Empty user list
+
+    def __init__(self,name,password):
 
       # docstring removed for simplicity
 
-        # self.first_name = first_name
-        # self.last_name = last_name
-        self.userName = userName
-        self.password = password
+        self.first_name = name
+        self.user_password = password
 
     def save_user(self):
-
         '''
-        save_contact method saves contact objects into contact_list
+        method to save user object to user_list .
         '''
-
-        Users.username_and_password_list.append(self)   
-
-
-
-       
+        User.user_list.append(self)
