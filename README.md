@@ -1,3 +1,5 @@
-# Project name
-Password locker
+Project name
+pasword locker
 
+Author
+Alice UMULISA
