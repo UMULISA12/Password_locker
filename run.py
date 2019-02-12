@@ -51,14 +51,21 @@ def display_credentials():
 
 
 def main():
-   
+
+    print("Hello Welcome password locker!. What is your name?")
+    user-name = input()
+
+    print(f"Hello {user-name}. what would you like to do?")
+    print('\n')
+     
     while True:
 
-       print("Hello Welcome password locker!!")
-       # user_name = input()
-       # print(f"Hello {user_name}. what would you like to do?")
-       print('\n')
-       print("Use these short codes: Create new user 'cu': Login to your account 'ex' -exit password locker")
+    #    print("Hello Welcome password locker!!")
+    #    # user_name = input()
+    #    # print(f"Hello {user_name}. what would you like to do?")
+    #    print('\n')
+
+       print("Use these short codes: 'cu' Create new user  'la' Login to your account  'ex' exit")
        short_code = input().lower()
 
 
@@ -81,44 +88,70 @@ def main():
              confirm_password = input()
 
 
-    else:
-            print("Login to your account:")
-            print("Enter your username:")
+             save_users(create_users(created_fname,created_lname,created_user_name,created_user_password)) # create and save new credential.
+             print ('\n')
+             print(f"new user {created_fname} {created_lname} created an account!")
+             print ('\n')
+
+
+    elif short_code == 'la':
+
+        print("Login to your account:")
+        print("Enter your username:")
+        username = input()
+        print("Enter your password:")
+        password = input()
+
+
+        if username != created_user_name or password != created_user_password:
+            print("You entered a wrong username or password")
+            print("Username")
             username = input()
-            print("Enter your password:")
-            password = input()
+            print("Your Password")
 
 
-      while   username != created_user_name or password != created_user_password:
-                    print("You entered a wrong username or password")
-                    print("Username")
-             username = input()
-                    print("Your Password")
+        else:
+            print('/n')
+            print("Use this short codes: View your credentials 'vi'  Add new credential 'add'  Delete credential 'del'  Search credential 'sear'")
+            print('/n')
+            short-code = input()
 
-
-    else:
-        print('/n')
-        print("Use this short codes: View your credentials 'vi'  Add new credential 'add'  Delete credential 'del'  Search credential 'sear'")
-        print('/n')
-        short-code = input()
-
-    if short-code == 'add':
-         print("Enter site name:")
-         site_name = input()
-         print("Enter a password:")
-         password = input()
+    elif short-code == 'add':
+        print("Enter site name:")
+        site_name = input()
+        print("Enter a password:")
+        password = input()
 
     elif short-code == 'vi':
                         
       while True:
-         print("This is the list of your credentials")
-        if display_credentials():
+          print("This is the list of your credentials")
+          if display_credentials():
 
-        for credential in display_credentials():
-         print(f"site name:{credential.site_name}")
-         print(f"site password:{credential.password}")
+            for credential in display_credentials():
+            print(f"site name:{credential.site_name}")
+            print(f"site password:{credential.password}")
 
     else:
          print('\n')
          print("You don't seem to have any credentials yet")
          print('\n')
+
+         print("Enter the number you want to search for")
+
+            search_credential = input()
+            if check_existing_credentials(search_number):
+                search_credential = find_credential(search_credential)
+                print(f"{search_credential.site_name {search_contact.site_username}")
+                print('-' * 20)
+
+                print(f"site user password.......{search_credential.site_userpassword}")
+                # print(f"Email address.......{search_contact.email}")
+            else:
+                print("That credential does not exist")
+
+         elif short_code == "ex":
+                print("Bye .......")
+                break
+         else:
+                print("I really didn't get that. Please use the short codes")  
