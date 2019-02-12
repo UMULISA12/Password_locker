@@ -39,9 +39,9 @@ class Credentials:
         Method that takes in a site and returns a username that matches that site_name.
 
         Args:
-            site: Phone number to search for
+            site: site name to search for
         Returns :
-            Contact of person that matches the number.
+            password of person that matches the number.
         '''
         for credential in cls.credentials_list:
             if credential.site_name == site_name:
@@ -51,7 +51,7 @@ class Credentials:
 
 
     @classmethod
-    def display_credentials(cls):
+    def display_credential(cls):
         '''
         method that returns the credentials list
         '''

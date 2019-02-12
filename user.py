@@ -5,13 +5,13 @@ class Users:
     """
     username_and_password_list = [] # Empty credential list
   
-    def __init__(self,first_name,last_name,user_name,password):
+    def __init__(self,userName,password):
 
       # docstring removed for simplicity
 
-        self.first_name = first_name
-        self.last_name = last_name
-        self.user_name = user_name
+        # self.first_name = first_name
+        # self.last_name = last_name
+        self.userName = userName
         self.password = password
 
     def save_user(self):
