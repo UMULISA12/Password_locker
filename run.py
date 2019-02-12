@@ -65,10 +65,10 @@ def main():
     if short_code == 'cu':
 
              print("Enter first name:")
-             created_user_name = input()
+             created_fname = input()
 
              print("Enter last name:")
-             created_user_name = input()
+             created_lname = input()
 
              print("Enter username:")
              created_user_name = input()
@@ -88,29 +88,37 @@ def main():
             print("Enter your password:")
             password = input()
 
+
+      while   username != created_user_name or password != created_user_password:
+                    print("You entered a wrong username or password")
+                    print("Username")
+             username = input()
+                    print("Your Password")
+
+
     else:
         print('/n')
         print("Use this short codes: View your credentials 'vi'  Add new credential 'add'  Delete credential 'del'  Search credential 'sear'")
         print('/n')
         short-code = input()
 
-     if short-code == 'add':
+    if short-code == 'add':
          print("Enter site name:")
          site_name = input()
          print("Enter a password:")
          password = input()
 
-        elif short-code == 'vi':
+    elif short-code == 'vi':
                         
-         while True:
-          print("This is the list of your credentials")
-            if display_credentials():
+      while True:
+         print("This is the list of your credentials")
+        if display_credentials():
 
-            for credential in display_credentials():
-            print(f"site name:{credential.site_name}")
-            print(f"site password:{credential.password}")
+        for credential in display_credentials():
+         print(f"site name:{credential.site_name}")
+         print(f"site password:{credential.password}")
 
-             else:
-              print('\n')
-              print("You don't seem to have any credentials yet")
-              print('\n')
+    else:
+         print('\n')
+         print("You don't seem to have any credentials yet")
+         print('\n')
