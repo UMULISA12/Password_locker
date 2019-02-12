@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.6
 
 from credential import Credentials
+from user import Users
 
 
 
@@ -36,7 +37,7 @@ def find_credential(site):
 
 
 def check_existing_credentials(name):
-   '''
+    '''
     Function that check if a contact exists with that number and return a Boolean
     '''
     return Credentials.find_by_site_name(name)
@@ -61,31 +62,31 @@ def main():
        short_code = input().lower()
 
 
-if short_code == 'cu':
+    if short_code == 'cu':
 
-        print("Enter first name:")
-        created_user_name = input()
+             print("Enter first name:")
+             created_user_name = input()
 
-        print("Enter last name:")
-        created_user_name = input()
+             print("Enter last name:")
+             created_user_name = input()
 
-        print("Enter username:")
-        created_user_name = input()
+             print("Enter username:")
+             created_user_name = input()
 
-        print("Select a Password:")
-        print("-"*5)
-        created_user_password = input()
+             print("Select a Password:")
+             print("-"*5)
+             created_user_password = input()
 
-        print("Confirm your password!")
-        confirm_password = input()
+             print("Confirm your password!")
+             confirm_password = input()
 
 
     else:
-        print("Login to your account:")
-        print("Enter your username:")
-        username = input()
-        print("Enter your password:")
-        password = input()
+            print("Login to your account:")
+            print("Enter your username:")
+            username = input()
+            print("Enter your password:")
+            password = input()
 
     else:
         print('/n')
