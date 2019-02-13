@@ -2,7 +2,7 @@ from user import User
 from credential import Credentials
 
 
-def user_name(userName, password):
+def acc_name(userName, password):
     '''
     Function to create new account
     '''
@@ -24,11 +24,11 @@ def account_login(login):
     return User.user_login(login)
 
 
-def create_credentials(user_name,phone_number,email,password):
+def create_credentials(acc_name,acc_username,acc_password):
     '''
     Function to create new credential
     '''
-    new_credentials = Credentials(user_name,phone_number,email,password)
+    new_credentials = Credentials(acc_name,acc_username,acc_password)
     return new_credentials
 
 
@@ -74,11 +74,11 @@ def display_credentials():
 def main():
     print("Welcome to password locker")
     print("Hi welcome to password locker. What's your name?")
-    user_name = input()
+    acc_name = input()
     print('\n')
 
     while True:
-        print(f"Please {user_name}! .Use these short codes: cu-create new user  log-login  ex-exit")
+        print(f"Please {acc_name}! .Use these short codes: cu-create new user  log-login  ex-exit")
         short_code = input().lower()
         
         if short_code == "cu":
@@ -95,7 +95,7 @@ def main():
             print("")
 
             while True:
-                print("Use these short codes: cc - create new credential, dc - display credential,  wq - exit credential list")
+                print("Use these short codes: cc - create new credential, dc - display credential,  exc - exit credential list")
                 short_code = input().lower()
 
                 if short_code == 'cc':
@@ -104,47 +104,42 @@ def main():
 
                         print('')
 
-                        print("User name ...")
-                        u_name = input()
+                        print("Account name ...")
+                        acc_name = input()
 
                         print('')
 
-                        print("Phone number ...")
-                        phone_number = input()
-
-                        print('')
-
-                        print("Email address ...")
-                        email = input()
+                        print("Accout username ...")
+                        acc_username = input()
 
                         print('')
 
                         print("Account password")
                         acc_password = input()
 
-                        save_user_credentials(create_credentials(u_name, phone_number, email, acc_password))
+                        save_user_credentials(create_credentials(acc_name, acc_username, acc_password))
                         print('')
 
-                        print(f"New credential username : {u_name}, Phone number: {phone_number}")
+                        print(f"New credential username : {acc_name}, Account username: {acc_username}")
                         print('')
                 elif short_code == 'dc':
                         if display_credentials():
                             print("This is a list of all the credential")
                             print('')
                             for Credentials in display_credentials():
-                                print(f"Username : {Credentials.user_name}, Phone number : {Credentials.phone_number} E-mail address : {Credentials.email} Password : {Credentials.password}")
+                                print(f"Username : {Credentials.acc_name}, Account username: {Credentials.acc_username} Password : {Credentials.password}")
 
                                 print('')
                         else:
                             print('')
-                            print("oops sorry, you have not  saved any credential")
+                            print("You have not saved any credential yet")
                             print('')
-                elif short_code == "wq":
+                elif short_code == "exc":
                         print('')
-                        print("Goodbye ...")
+                        print("Goodbye...... see u")
                         break
                 else:
-                    print("input a valid  code")
+                    print("Please enter a valid short code!")
 
         elif short_code == "log":
             print("Log in")
@@ -157,7 +152,7 @@ def main():
             print(f"Hello {userName} please can you choose from the options below")
             print("")
             while True:
-                print("Use these short codes: cc - create new credential, dc - display credential, wq - exit credential list")
+                print("Use these short codes: cc - create new credential, dc - display credential, exc - exit credential list")
                 short_code = input().lower()
 
                 if short_code == 'cc':
@@ -167,40 +162,40 @@ def main():
                         print('')
 
                         print("User name ...")
-                        u_name = input()
+                        acc_name = input()
 
                         print('')
 
-                        print("Phone number ...")
-                        phone_number = input()
+                        # print("Phone number ...")
+                        # phone_number = input()
 
                         print('')
 
-                        print("Email address ...")
-                        email = input()
+                        print("Accout username ...")
+                        acc_username = input()
 
                         print('')
 
                         print("Account password")
                         acc_password = input()
 
-                        save_user_credentials(create_credentials(u_name, phone_number, email, acc_password))
+                        save_user_credentials(create_credentials(acc_name, phone_number, acc_username, acc_password))
                         print('')
 
-                        print(f"New credential account : {u_name}, User name : {phone_number}")
+                        print(f"New credential account : {acc_name}, User name : {phone_number}")
                         print('')
                 elif short_code == 'dc':
                         if display_credentials():
                             print("Here is a list of all the credential")
                             print('')
                             for Credentials in display_credentials():
-                                print(f"Username : {Credentials.user_name}, Phone number : {Credentials.phone_number} E-mail address : {Credentials.email} Password : {Credentials.password}")
+                                print(f"Username : {Credentials.acc_name}, Phone number : {Credentials.phone_number} E-mail address : {Credentials.acc_username} Password : {Credentials.password}")
 
                                 print('')
                         else:
                             print('')
                             print("You have not saved any credential")          
-                elif short_code == "wq":
+                elif short_code == "exc":
                         print('')
                         print("Bye......see u")
                         break
@@ -216,4 +211,5 @@ def main():
 
 
 if __name__ == '__main__':
+    
     main()
