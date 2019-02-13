@@ -13,12 +13,11 @@ class Credentials:
 
         Credentials.credential_list.append(self)
 
-    def __init__(self,user_name,phone_number,email,password):
+    def __init__(self,acc_name,acc_username,password):
 
 
-        self.user_name = user_name
-        self.phone_number = phone_number
-        self.email = email
+        self.acc_name = acc_name
+        self.acc_username = acc_username
         self.password = password
 
     def delete_credential(self):
@@ -34,7 +33,7 @@ class Credentials:
         This is a method that in which user can find credential by name search
         '''
         for credential in cls.credential_list:
-            if credential.user_name == name:
+            if credential.acc_name == name:
                 return credential
 
     @classmethod
@@ -43,7 +42,7 @@ class Credentials:
         method that checks if the credential ade are already on the credential_list and return true (if exists) and false(if does not)
         '''
         for credential in cls.credential_list:
-            if credential.user_name == name:
+            if credential.acc_name == name:
                 return True
 
         return false 
