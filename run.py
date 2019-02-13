@@ -144,7 +144,7 @@ def main():
 
         elif short_code == "log":
             print("Log in")
-            print("please enter a user Name")
+            print("Enter your username")
             print("_" * 20)
             uname = input()
             print("Enter your password")
