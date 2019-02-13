@@ -158,7 +158,7 @@ def main():
 
                 if short_code == 'cc':
                         print("New credential")
-                        print("-"*10)
+                        print("-"*20)
 
                         print('')
 
