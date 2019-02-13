@@ -1,58 +1,57 @@
+import random
+
 class Credentials:
     """
-    Class that generates credentials
+    Class that generates new instances of credential
     """
 
-    credentials_list = [] # Empty credential list
-
-    def __init__(self,site_name,site_username,site_password):
-
-     
-        self.site_name = site_name
-        self.site_username = site_username
-        self.site_password = site_password
-
-
-    def save_credential(self):
-
+    credential_list = [] # empty credential list
+ # Init method here
+    def save_credentials(self):
         '''
-        save_credentials method saves credential objects into credentials_list
+        save_credential method saves credential objects into credential_list
         '''
 
-        Credentials.credentials_list.append(self)  
+        Credentials.credential_list.append(self)
+
+    def __init__(self,user_name,phone_number,email,password):
 
 
+        self.user_name = user_name
+        self.phone_number = phone_number
+        self.email = email
+        self.password = password
 
     def delete_credential(self):
-
         '''
-        delete_credential method deletes a saved credential from the credentials_list
+        delete_credential method deletes a saved credential from the credential_list
         '''
 
-        Credentials.credentials_list.remove(self)
-
-
+        Credentials.credential_list.remove(self)
 
     @classmethod
-    def find_by_site_name(cls,site_name):
+    def find_by_user_name(cls, name):
         '''
-        Method that takes in a site and returns a username that matches that site_name.
-
-        Args:
-            site: site name to search for
-        Returns :
-            password of person that matches the number.
+        This is a method that in which user can find credential by name search
         '''
-        for credential in cls.credentials_list:
-            if credential.site_name == site_name:
+        for credential in cls.credential_list:
+            if credential.user_name == name:
                 return credential
 
-
-
-
     @classmethod
-    def display_credential(cls):
+    def credential_exist(cls,name):
         '''
-        method that returns the credentials list
+        method that checks if the credential ade are already on the credential_list and return true (if exists) and false(if does not)
         '''
-        return cls.credentials_list
+        for credential in cls.credential_list:
+            if credential.user_name == name:
+                return True
+
+        return false 
+    
+    @classmethod
+    def credential_display(cls):
+        '''
+        method that checks if the credential  already display on the  credential_list and return true (if exists) and false(if does not)
+        '''
+        return cls.credential_list
